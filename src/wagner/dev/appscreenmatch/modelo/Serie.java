@@ -3,7 +3,7 @@ package wagner.dev.appscreenmatch.modelo;
 public class Serie extends Titulo {
     private int temporadas;
     private int episodiosPorTemporada;
-    private int minutosPorEpsidio;
+    private int minutosPorEpisodio;
     private boolean ativa;
 
     public int getTemporadas() {
@@ -23,11 +23,11 @@ public class Serie extends Titulo {
     }
 
     public int getMinutosPorEpisodio() {
-        return minutosPorEpsidio;
+        return minutosPorEpisodio;
     }
 
     public void setMinutosPorEpisodio(int minutosPorEpisodio) {
-        this.minutosPorEpsidio = minutosPorEpisodio;
+        this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
     public boolean isAtiva() {
@@ -40,6 +40,6 @@ public class Serie extends Titulo {
 
     @Override
     public int getDuracaoEmMinutos() {
-        return temporadas * episodiosPorTemporada * minutosPorEpsidio;
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
 }
