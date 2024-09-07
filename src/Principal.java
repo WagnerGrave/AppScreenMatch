@@ -27,7 +27,7 @@ public class Principal {
         BreakingBad.exibeFichaTecnica();
         BreakingBad.setTemporadas(5);
         BreakingBad.setEpisodiosPorTemporada(9);
-        BreakingBad.setMinutosPorEpsidio(50);
+        BreakingBad.setMinutosPorEpisodio(50);
 
         System.out.println("Duração para maratonar Breaking Bad: " + BreakingBad.getDuracaoEmMinutos());
 

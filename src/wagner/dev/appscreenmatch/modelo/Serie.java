@@ -22,11 +22,11 @@ public class Serie extends Titulo {
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public int getMinutosPorEpsidio() {
+    public int getMinutosPorEpisodio() {
         return minutosPorEpsidio;
     }
 
-    public void setMinutosPorEpsidio(int minutosPorEpisodio) {
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
         this.minutosPorEpsidio = minutosPorEpisodio;
     }
 
