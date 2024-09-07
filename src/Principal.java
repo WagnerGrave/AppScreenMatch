@@ -51,6 +51,11 @@ public class Principal {
         episodio.setTotalVizualizacoes(2000);
         filtro.filtra(episodio);
 
+        var filmeDoWagner = new Filme();
+        filmeDoWagner.setDuracaoEmMinutos(180);
+        filmeDoWagner.setNome("Clube da Luta");
+        filmeDoWagner.setAnoDeLancamento(1999);
+        filmeDoWagner.avalia(10);
 
     }
 }

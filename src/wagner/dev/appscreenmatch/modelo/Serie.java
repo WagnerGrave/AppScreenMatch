@@ -26,8 +26,8 @@ public class Serie extends Titulo {
         return minutosPorEpsidio;
     }
 
-    public void setMinutosPorEpsidio(int minutosPorEpsidio) {
-        this.minutosPorEpsidio = minutosPorEpsidio;
+    public void setMinutosPorEpsidio(int minutosPorEpisodio) {
+        this.minutosPorEpsidio = minutosPorEpisodio;
     }
 
     public boolean isAtiva() {
