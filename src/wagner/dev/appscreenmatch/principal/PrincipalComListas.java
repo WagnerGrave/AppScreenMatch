@@ -5,6 +5,9 @@ import wagner.dev.appscreenmatch.modelo.Serie;
 import wagner.dev.appscreenmatch.modelo.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -17,7 +20,7 @@ public class PrincipalComListas {
         outroFilme.avalia(8);
         filmeDoWagner.avalia(7);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new ArrayList<>();
         lista.add(filmeDoWagner);
         lista.add(meuFilme);
         lista.add(outroFilme);
@@ -29,5 +32,24 @@ public class PrincipalComListas {
                 System.out.println("Classificação " + filme.getClassificacao());
             }
         }
+
+        List<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam");
+        buscaPorArtista.add("Wagner");
+        buscaPorArtista.add("Ruth");
+        System.out.println(buscaPorArtista);
+
+        //Ordenacao por ordem alfabetica usando collections e por ano usando Comparator
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação");
+        System.out.println(buscaPorArtista);
+        System.out.println("Lista de titulos ordenados");
+        Collections.sort(lista);
+        System.out.println(lista);
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(lista);
     }
+
 }
