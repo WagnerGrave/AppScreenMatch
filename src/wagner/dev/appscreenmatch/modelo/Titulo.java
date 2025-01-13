@@ -1,6 +1,10 @@
 package wagner.dev.appscreenmatch.modelo;
 
+import com.google.gson.annotations.SerializedName;
+import wagner.dev.appscreenmatch.excecao.ErroDeConversaoDeAnoException;
+
 public class Titulo implements Comparable<Titulo>{
+
         private String nome;
         private int anoDeLancamento;
         private int totalDeAvaliacao;
@@ -11,6 +15,18 @@ public class Titulo implements Comparable<Titulo>{
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4){
+            throw new ErroDeConversaoDeAnoException("Nao consegui converter o ano" +
+                    "porque tem mais de 04 caracteres.");
+        }
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,2));
+
     }
 
     public String getNome() {
@@ -68,5 +84,12 @@ public class Titulo implements Comparable<Titulo>{
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return "nome ='" + nome + '\'' +
+                ", anoDeLancamento = " + anoDeLancamento + "," +
+                " duração = " + duracaoEmMinutos + " Minutos";
     }
 }
